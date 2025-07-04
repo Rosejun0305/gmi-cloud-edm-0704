@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GMI Cloud - 2025 AI云端市场动态报告</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', 'Microsoft YaHei', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            padding: 0;
+            background: none;
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px 20px 0 0;
+        }
+        
+        .header-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 20px 20px 0 0;
+        }
+        
+        .content {
+            padding: 50px 40px;
+        }
+        
+        .intro {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .intro::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+        }
+        
+        .intro h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .intro p {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .country-section {
+            margin-bottom: 45px;
+            position: relative;
+        }
+        
+        .country-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #1a1a2e;
+            position: relative;
+        }
+        
+        .country-flag {
+            font-size: 32px;
+            margin-right: 15px;
+        }
+        
+        .country-title {
+            font-size: 28px;
+            color: #1a1a2e;
+            font-weight: 700;
+            flex: 1;
+        }
+        
+        .company-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 25px;
+            border: 1px solid #e8f4f8;
+            position: relative;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(26, 26, 46, 0.08);
+        }
+        
+        .company-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(26, 26, 46, 0.15);
+            border-color: #4a90e2;
+        }
+        
+        .company-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, #1a1a2e, #4a90e2);
+            border-radius: 15px 0 0 15px;
+        }
+        
+        .company-name {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1a1a2e;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .company-name::before {
+            content: '🏢';
+            margin-right: 10px;
+        }
+        
+        .highlights {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .highlights li {
+            padding: 12px 0;
+            border-bottom: 1px solid #f0f8ff;
+            position: relative;
+            padding-left: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .highlights li:before {
+            content: "▶";
+            color: #4a90e2;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            top: 12px;
+        }
+        
+        .highlights li:hover {
+            background: #f8fbff;
+            padding-left: 35px;
+        }
+        
+        .highlights li:last-child {
+            border-bottom: none;
+        }
+        
+        .source-link {
+            display: inline-block;
+            background: linear-gradient(135deg, #1a1a2e 0%, #4a90e2 100%);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 11px;
+            font-weight: 600;
+            margin-left: 10px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .source-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(26, 26, 46, 0.3);
+            background: linear-gradient(135deg, #4a90e2 0%, #1a1a2e 100%);
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, #1a1a2e 0%, #4a90e2 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 50px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 30px 30px;
+            animation: float 25s linear infinite reverse;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            100% { transform: translateY(-30px); }
+        }
+        
+        .cta-section h2 {
+            font-size: 26px;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .cta-section p {
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .footer {
+            background: #1a252f;
+            color: #bdc3c7;
+            text-align: center;
+            padding: 30px;
+            font-size: 14px;
+        }
+        
+        .footer p {
+            margin-bottom: 5px;
+        }
+        
+        .date-badge {
+            background: linear-gradient(135deg, #4a90e2 0%, #1a1a2e 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 30px;
+            display: inline-block;
+            box-shadow: 0 5px 15px rgba(74, 144, 226, 0.3);
+        }
+        
+        .key-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            margin: 35px 0;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(26, 26, 46, 0.1);
+            border: 1px solid #e8f4f8;
+            transition: all 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(26, 26, 46, 0.15);
+        }
+        
+        .stat-number {
+            font-size: 28px;
+            font-weight: 700;
+            color: #1a1a2e;
+            margin-bottom: 8px;
+        }
+        
+        .stat-label {
+            font-size: 13px;
+            color: #7f8c8d;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+        
+        .highlight-number {
+            background: linear-gradient(135deg, #4a90e2 0%, #1a1a2e 100%);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 0.9em;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                border-radius: 15px;
+            }
+            
+            .content {
+                padding: 30px 25px;
+            }
+            
+            .country-title {
+                font-size: 24px;
+            }
+            
+            .company-card {
+                padding: 20px;
+            }
+            
+            .key-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="https://i.postimg.cc/QNwN0gmL/image.png" alt="GMI Cloud Header" class="header-image">
+        </div>
+        
+        <div class="content">
+            <div class="intro">
+                <h2>🎯 战略情报概览</h2>
+                <p>掌握全球AI云端市场脉动，洞察竞争对手最新策略布局，为GMI Cloud制定领先市场的致胜策略</p>
+            </div>
+            
+            <div class="date-badge">📊 报告期间：2025/6/20 - 7/4</div>
+            
+            <h3 style="text-align: center; color: #1a1a2e; font-size: 20px; margin-bottom: 25px; font-weight: 700;">📈 重点数据</h3>
+            
+            <div class="key-stats">
+                <div class="stat-card">
+                    <div class="stat-number">5</div>
+                    <div class="stat-label">追踪国家市场</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">8</div>
+                    <div class="stat-label">核心竞争对手</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">$1T</div>
+                    <div class="stat-label">最大投资规模<br><small style="font-size: 10px; opacity: 0.7;">SoftBank Corp</small></div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">18.9</div>
+                    <div class="stat-label">EFLOPS 目标算力<br><small style="font-size: 10px; opacity: 0.7;">Sakura Internet</small></div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">2000</div>
+                    <div class="stat-label">GPU 部署数量<br><small style="font-size: 10px; opacity: 0.7;">Sakura Internet</small></div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">200MW</div>
+                    <div class="stat-label">最大数据中心规模<br><small style="font-size: 10px; opacity: 0.7;">Singtel Nxera</small></div>
+                </div>
+            </div>
+            
+            <div class="country-section">
+                <div class="country-header">
+                    <div class="country-flag">🇯🇵</div>
+                    <h2 class="country-title">日本市场</h2>
+                </div>
+                
+                <div class="company-card">
+                    <div class="company-name">SoftBank Corp.</div>
+                    <ul class="highlights">
+                        <li>孙正义规划于美国亚利桑那州打造 <span class="highlight-number">$1万亿</span> AI产业园区，聚焦机器人与AI制造 
+                            <a href="https://www.morningstar.com/news/dow-jones/202506271749/softbanks-son-lays-out-vision-to-be-no-1-in-artificial-superintelligence" class="source-link" target="_blank">来源</a>
+                        </li>
+                        <li>与台积电等科技巨头洽谈合作，目标复制深圳式高科技生态系统 
+                            <a href="https://www.manilatimes.net/2025/06/21/business/foreign-business/softbanks-son-pitches-1-t-arizona-ai-hub/2136949" class="source-link" target="_blank">来源</a>
+                        </li>
+                        <li>持续推动AI基础设施全球布局，与OpenAI、Oracle等合作扩大AI云端投资 
+                            <a href="https://telecom.economictimes.indiatimes.com/amp/news/internet/softbank-aims-to-become-leading-artificial-super-intelligence-platform-provider/122102215" class="source-link" target="_blank">来源</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="company-card">
+                    <div class="company-name">SAKURA Internet</div>
+                    <ul class="highlights">
+                        <li>GPU云服务自2024年起快速成长，<span class="highlight-number">2025年度</span>营收大幅提升 
+                            <a href="https://www.bridge-salon.jp/report_bridge/archives/eng/3778/20250702.html" class="source-link" target="_blank">来源</a>
+                        </li>
+                        <li>积极扩充NVIDIA H100、H200等新一代GPU，已完成 <span class="highlight-number">2000颗</span> H100安装 
+                            <a href="https://www.moomoo.com/news/post/41589260/sakura-internet-has-completed-the-installation-of-2000-nvidia-h100" class="source-link" target="_blank">来源</a>
+                        </li>
+                        <li>获日本政府补助，目标2028年达到 <span class="highlight-number">18.9 EFLOPS</span> 算力 
+                            <a href="https://multiplatform.ai/sakura-internets-gpu-procurement-surge-signals-japanese-generative-ai-advancement/" class="source-link" target="_blank">来源</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="country-section">
+                <div class="country-header">
+                    <div class="country-flag">🇰🇷</div>
+                    <h2 class="country-title">韩国市场</h2>
+                </div>
+                
+                <div class="company-card">
+                    <div class="company-name">KT (Korea Telecom)</div>
+                    <ul class="highlights">
+                        <li>强化AI、云端与 <span class="highlight-number">6G技术</span> 布局，与三星电子合作推动多天线技术 
+                            <a href="https://www.mk.co.kr/en/it/11129052" class="source-link" target="_blank">来源</a>
+                        </li>
+                        <li>与微软共同成立AI专案小组，开发韩国本地化大型语言模型 
+                            <a href="https://pulse.mk.co.kr/news/english/11256859" class="source-link" target="_blank">来源</a>
+                        </li>
+                        <li>目标将AI转型营收提升 <span class="highlight-number">3倍</span>，聚焦AI云、数据中心与企业AI解决方案 
+                            <a href="https://m.koreatimes.co.kr/pages/article.amp.asp?newsIdx=393494" class="source-link" target="_blank">来源</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="country-section">
+                <div class="country-header">
+                    <div class="country-flag">🇹🇭</div>
+                    <h2 class="country-title">泰国市场</h2>
+                </div>
+                
+                <div class="company-card">
+                    <div class="company-name">Siam AI / Siam.AI Cloud</div>
+                    <ul class="highlights">
+                        <li>持续推动主权AI云，与Nvidia、Naver Cloud等国际伙伴合作开发泰语大型语言模型 
+                            <a href="https://www.ddn.com/resources/customers/siam-ai/" class="source-link" target="_blank">来源</a>
+                        </li>
+                        <li>已部署 <span class="highlight-number">1,000颗</span> GPU集群，规划导入H200与Blackwell液冷架构 
+                            <a href="https://www.ryt9.com/s/iq36/3567681" class="source-link" target="_blank">来源</a>
+                        </li>
+                        <li>聚焦医疗、智慧城市与生成式AI应用，推动泰国AI产业发展 
+                            <a href="https://www.thailand4.com/en/1203384" class="source-link" target="_blank">来源</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="country-section">
+                <div class="country-header">
+                    <div class="country-flag">🇸🇬</div>
+                    <h2 class="country-title">新加坡市场</h2>
+                </div>
+                
+                <div class="company-card">
+                    <div class="company-name">Singtel Nxera</div>
+                    <ul class="highlights">
+                        <li>与马来西亚电信合资在柔佛州打造AI-ready绿色数据中心园区 
+                            <a href="https://www.nxera-dc.com/about-us/newsroom/" class="source-link" target="_blank">来源</a>
+                        </li>
+                        <li>首期 <span class="highlight-number">64MW</span>，未来可扩展至 <span class="highlight-number">200MW</span>，预计2026年启用 
+                            <a href="https://telecomtalk.info/singtel-launches-nxera-data-centre-brand-ai/915684/" class="source-link" target="_blank">来源</a>
+                        </li>
+                        <li>采用液冷技术支持高密度AI运算，迈向 <span class="highlight-number">2028年</span> 净零排放目标 
+                            <a href="https://www.telecoms.com/ai/singtel-embarks-on-ai-flavoured-data-centre-push" class="source-link" target="_blank">来源</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="country-section">
+                <div class="country-header">
+                    <div class="country-flag">🇲🇾</div>
+                    <h2 class="country-title">马来西亚市场</h2>
+                </div>
+                
+                <div class="company-card">
+                    <div class="company-name">YTL Power / YTL Cloud</div>
+                    <ul class="highlights">
+                        <li>柔佛州AI超级电脑首期 <span class="highlight-number">48MW</span> 已商转，<span class="highlight-number">100MW</span> AI-DC预计2025年中全面上线 
+                            <a href="https://w.media/ytl-dc-launch-500mw-data-center-campus-in-johor-malaysia/" class="source-link" target="_blank">来源</a>
+                        </li>
+                        <li>与Nvidia合作推动主权云，获马来西亚政府高度支持 
+                            <a href="https://www.mingtiandi.com/real-estate/data-centres/nvidia-to-work-with-ytl-to-build-ai-data-centre-in-malaysias-johor-bahru/" class="source-link" target="_blank">来源</a>
+                        </li>
+                        <li>目标成为东南亚AI与数据中心枢纽，于MWC 2025签署多项合作备忘录 
+                            <a href="https://my.linkedin.com/company/ytl-data-centers" class="source-link" target="_blank">来源</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="cta-section">
+                <h2>💪 知己知彼，百战百胜</h2>
+                <p>GMI Cloud 深度洞察全球市场动态，掌握竞争对手一举一动</p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>© 2025 GMI Cloud Market Intelligence Team | 本报告仅供内部战略分析使用</p>
+            <p>如需更详细市场分析，请联系：rose.c@gmicloud.ai</p>
+        </div>
+    </div>
+</body>
+</html>
